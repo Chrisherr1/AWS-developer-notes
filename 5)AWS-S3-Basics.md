@@ -136,3 +136,26 @@ Buckets are containers for objects.
     S3 should be your default when you're ingesting data OR Outputting data from a AWS product.
 
 
+**BONUS TIP**
+
+    Rule of thumb: if the site is pure frontend (a React build, a portfolio, docs, a landing page), S3 is cheaper, simpler, and scales for free. The moment you need server-side code or a database, you need EC2 (or a service like Lambda/Elastic Beanstalk).
+
+    For the Developer exam, know that S3 static hosting is the go-to answer for "cheapest way to host a static site," and it's almost always paired with CloudFront in front of it for HTTPS and CDN caching, since S3 website endpoints don't do HTTPS on their own.
+
+*When Implementing s3 Static website*
+
+One exam-relevant nuance: data transfer from S3 to CloudFront is free, so putting CloudFront in front of your bucket can actually lower your total bill versus serving straight from S3, since edge caching means fewer requests hit S3 at all.
+
+You'd need to implement a WAF+Cloud front to prevent abuse from flooding if necessary.
+
+Usually cloudfront is enough though if no real traffic.
+
+If someone tries hammering it it usually hammers the CDN instead.
+
+
+**Deleting an S3 Bucket**
+---
+    You'll need to empty the bucket and then you can delete the bucket.
+
+    Delete it if you're not using it as it takes up space meaning that you're paying for that space.
+    
