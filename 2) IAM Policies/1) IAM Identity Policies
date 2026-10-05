@@ -1,29 +1,37 @@
-**IAM Identity Policies**
----
+# IAM Identity Policies
 
-    Identity policies are attached to AWS identities and either
-    ALLOW or DENY access to AWS resources.
+```text
+Identity policies are attached to AWS identities and either
+ALLOW or DENY access to AWS resources.
 
-
-It is a set of security statements for AWS. It grants access or denies access to AWS products to any identity which uses that policy.
+It is a set of security statements for AWS. It grants access or denies access to
+AWS products to any identity which uses that policy.
 
 IAM Policy Documents are made using JSON.
+```
 
-**At A high level a IAM Policy Document is just one or more statements**
+> **At A high level a IAM Policy Document is just one or more statements**
+
 ---
 
-**So what makes up a statement?**
----
-    1. Statement ID or SID
-        - Optional, lets you identify a statement and what it does.
-        - Important to always use this regardless of how big or small a policy document is.
+## So what makes up a statement?
 
+### 1. Statement ID or SID
+
+```text
+- Optional, lets you identify a statement and what it does.
+- Important to always use this regardless of how big or small a policy document is.
+```
+
+### Action & Resource
+
+```text
 Every Interaction you have with AWS is a combination of two main things,
     1. Resource you're interacting with
     2. The Actions you're attempting to perform on that resource.
 
-
-A Statement only applies if the interaction that you're having with AWS match the action and the resource.
+A Statement only applies if the interaction that you're having with AWS match
+the action and the resource.
 
 The actual action part of a statement matches one or more actions.
 
@@ -32,77 +40,102 @@ One Action could map to multiple Actions.
 It CAN be very specific and list a specific individual action.
 
 The format is :
-        Service: Operation
+    Service: Operation
 
-Wildcards can be used and they can be used to match any, inside a 
+Wildcards can be used and they can be used to match any, inside a
 service by doing something like...
-        "Service:*"
+    "Service:*"
 
 Alternatively actions can be a list of individual actions.
 
- So you have effectively 3 options:
+So you have effectively 3 options:
     1. Specific Action
     2. Wild Card
     3. A list of multiple independent actions
 
 Resources is the same only it matches AWS resources.
 If you plan on using the List format or wildcard, Use the ARN format(Amazon resource )
+```
 
+### Effect
+
+```text
 Effect is either ALLOW/DENY Only.
-It controls what AWS does if the action and the resource parts of the statement match the operation that you're attempting to do with AWS.
+It controls what AWS does if the action and the resource parts of the statement
+match the operation that you're attempting to do with AWS.
 
-Eg: If you're trying to access a S3 Bucket and the action and resource part of the statement match and the EFFECT is ALLOWED then you'll be allowed to do it.
+Eg: If you're trying to access a S3 Bucket and the action and resource part of the
+statement match and the EFFECT is ALLOWED then you'll be allowed to do it.
 
 If you're on DENY then it will PREVENT the action from going through.
+```
 
-**There will be cases when you will have broad allows/denies**
+---
 
-    Basically, You could have a broad allow but have specific actions or resources be Denied.
+## There will be cases when you will have broad allows/denies
 
-    It's kinda up to you to figure that out.
+```text
+Basically, You could have a broad allow but have specific actions or resources be Denied.
 
-    Eg: Resource *, Action S3:* , Effect: Allow
+It's kinda up to you to figure that out.
 
-    This basically allows you do anything remove,build,alter, S3 buckets.(S3 Administrator basically)
+Eg: Resource *, Action S3:* , Effect: Allow
 
-    Continuing this..
-    
-        There could be a second statement.
+This basically allows you do anything remove,build,alter, S3 buckets.
+(S3 Administrator basically)
 
-        resource:arn:aws:s3:::catgifs, Action:s3:*, Effect: Deny
-        
-        This would deny catgifs bucket and any objects in that bucket.
+Continuing this..
 
-        Both have their own UID.
+    There could be a second statement.
 
-**Simple Rules to not get confused**
-    1. Explicit Denies
-        If you have a statement that EXPLICITLY DENIES something then
-        it wins over EVERYTHING.
+    resource:arn:aws:s3:::catgifs, Action:s3:*, Effect: Deny
 
-    2. Explicit Allows
-        If you have a statement that EXPLICITLY ALLOWS access to a resource then it usually goes through unless you have an explicit deny.
-    
+    This would deny catgifs bucket and any objects in that bucket.
+
+    Both have their own UID.
+```
+
+---
+
+## Simple Rules to not get confused
+
+```text
+1. Explicit Denies
+    If you have a statement that EXPLICITLY DENIES something then
+    it wins over EVERYTHING.
+
+2. Explicit Allows
+    If you have a statement that EXPLICITLY ALLOWS access to a resource then it
+    usually goes through unless you have an explicit deny.
+
     If you are explicitly allowed and denied a specific resource then DENY will ALWAYS win.
 
-    3. Implicit Deny
+3. Implicit Deny
     If there is no deny/allow, then the default goes through,
     It just by default denies you from everything.
 
 If they have no explicit access, they'll have no access.
+```
 
-Using a managed policy would make things easier so you can just add people to that one instead of dealing with multiple policies at once.
+> Using a managed policy would make things easier so you can just add people to that one instead of dealing with multiple policies at once.
 
+---
 
-**EXAMPLE**
+## EXAMPLE
 
-    Sally - Developer
-    Miles - Accounts
-    Mike  - Production
+```text
+Sally - Developer
+Miles - Accounts
+Mike  - Production
+```
 
-Option 1 : You could design a policy that grants access to the resources needed for that project. Then, assign the JSON for each account.
+### Option 1 : Inline Policy
 
-*This was called Inline Policy.*
+```text
+You could design a policy that grants access to the resources needed for that project.
+Then, assign the JSON for each account.
+
+This was called Inline Policy.
     You are applying the policy to each user individually.
 
     This would work in this case, but it's not best case due it being difficult to maintain.
@@ -110,16 +143,28 @@ Option 1 : You could design a policy that grants access to the resources needed 
     Changing the access rights means changing it on all 3 inline policies.
 
     Meaning it doesn't scale properly.
+```
 
-Option 2 : You create an object policy. You then give it to any users you want it to apply to.
+### Option 2 : Managed Policy
 
-*This is called a Managed Policy*
+```text
+You create an object policy. You then give it to any users you want it to apply to.
 
-    This is good because it's reusable, and Low Management Overhead.(JSON is easy to change because one change affects all users).
+This is called a Managed Policy
+
+    This is good because it's reusable, and Low Management Overhead.
+    (JSON is easy to change because one change affects all users).
 
     Scalable.
 
     This should be the default operational rights.
+```
 
-**When would you use an inline policy then?**
-    This is usually for special or exceptions. You can tune it to block certain actions for a certain user or allow a user to something.
+---
+
+## When would you use an inline policy then?
+
+```text
+This is usually for special or exceptions. You can tune it to block certain actions
+for a certain user or allow a user to something.
+```

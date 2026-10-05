@@ -1,26 +1,33 @@
-Domain 1: 32% of questions (20)
+# Domain 1: 32% of questions (20)
 
-    1.1 Develop code for applications hosted on AWS.
-        - Event driven design helps decouple.
-        Know loosely coupled and tightly coupled services are
+---
 
-       - Event driven communicate through networks, unlike monolithics.
-       this is referring to microservices.
+## 1.1 Develop code for applications hosted on AWS.
 
-        - Instead of retrying, you could use exponential back off+ jitter.
+```text
+- Event driven design helps decouple.
+    Know loosely coupled and tightly coupled services are
 
-        Message failures - Lambda to send invocations to other services.
+- Event driven communicate through networks, unlike monolithics.
+    this is referring to microservices.
 
-        Code and build Resilience to handle failures.
+- Instead of retrying, you could use exponential back off+ jitter.
 
-        - Use AWS services for different design patterns,
-            - Event-driven
-            - Orchestration
-            - Fanout
-            - Synchronous and asynchronous
+- Message failures - Lambda to send invocations to other services.
 
-    1.2 Develop code for AWS Lambda.
+- Code and build Resilience to handle failures.
 
+- Use AWS services for different design patterns,
+    - Event-driven
+    - Orchestration
+    - Fanout
+    - Synchronous and asynchronous
+```
 
-    1.3 Use data stores in application development.
+---
 
+## 1.2 Develop code for AWS Lambda.
+
+---
+
+## 1.3 Use data stores in application development.
