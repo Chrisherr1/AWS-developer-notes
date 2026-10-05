@@ -4,7 +4,7 @@
 
 **High level Product Basics**
 
-    Route 52 offers 2 main services:
+    Route 53 offers 2 main services:
         1. Register Domains
         2. Host Zones for you on a managed name server that it provides.
 
@@ -16,11 +16,11 @@ It can continue even if it loses a bunch of regions.
 
 MOST IMPORTANT SERVICE. IN AWS.
 
-**Architecure**
+**Architecture**
 
     1. It has the ability to register domains. Therefore, it has relationships with the major domain registers.
 
-    One controls .com, another .io, ect you get it.
+    One controls .com, another .io, etc you get it.
     Given Authority by IANA.
 
 

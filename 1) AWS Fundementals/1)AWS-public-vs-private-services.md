@@ -12,7 +12,7 @@ Public vs Private Services:
 
     For both there are permissions as well as networking.
 
-    So even through S3 is a public service, by default an identity
+    So even though S3 is a public service, by default an identity
     other than the account root user, has no authorization to access
     that resource.
 
@@ -20,7 +20,7 @@ Public vs Private Services:
 
 When reviewing public versus private services,
 
-    Its the networking that matters.
+    It's the networking that matters.
 
 When thinking about any public cloud environment:
 
@@ -41,7 +41,7 @@ When thinking about any public cloud environment:
 
 *AWS Public Zone*
 
-- This runs between the public internet and private zone networks.It is not on the public internet, it's a network that is connected to
+- This runs between the public internet and private zone networks. It is not on the public internet, it's a network that is connected to
 the public internet.
 
     This Public Zone is where AWS public services operate from.
@@ -49,12 +49,12 @@ the public internet.
     Services with public endpoints such as S3.
 
 
-If youre accessing a service from the internet, you are basically going through the public Internet zone and access te AWS Public zone to access those services.
+If you're accessing a service from the internet, you are basically going through the public Internet zone and access the AWS Public zone to access those services.
 
 
-**later you'll find out that private networks in the AWS Private Zones can be connected to other private zones and even to buisness private servers**
+**later you'll find out that private networks in the AWS Private Zones can be connected to other private zones and even to business private servers**
 **You can also create and attach an internet gateway to a VPC to allow you to allow resources within that VPC to access the internet
 at the requirement of a public IP address**
-    having the gateway can allow allow it to gain access to public aws services like S3, but crutially you'll see that this ever hits the public internet at any point, it communicated only to the AWS Public Zone.
+    having the gateway can allow it to gain access to public aws services like S3, but crucially you'll see that this never hits the public internet at any point, it communicated only to the AWS Public Zone.
 
     

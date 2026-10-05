@@ -24,11 +24,11 @@ Don't need to worry about that stuff as a customer.
     3. Networking Traffic Protection(encryption,integrity, identity)
 
 If your server uses SSL certificates, you manage that.
-If you encrypt sever to server communication, you manage that.
+If you encrypt server to server communication, you manage that.
 
 You also responsible for the operating system,network,and firewall configuration for the instances.
 
-You are also responsible for the platform, applications,idenity & access management.
+You are also responsible for the platform, applications,identity & access management.
 
 You are also responsible for any customer data.(Backups and security)
 

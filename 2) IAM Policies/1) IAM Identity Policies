@@ -20,7 +20,7 @@ IAM Policy Documents are made using JSON.
 
 Every Interaction you have with AWS is a combination of two main things,
     1. Resource you're interacting with
-    2. The Actions you're attempting to preform on that resource.
+    2. The Actions you're attempting to perform on that resource.
 
 
 A Statement only applies if the interaction that you're having with AWS match the action and the resource.
@@ -55,7 +55,7 @@ Eg: If you're trying to access a S3 Bucket and the action and resource part of t
 
 If you're on DENY then it will PREVENT the action from going through.
 
-**There will be cases when you will have broad allows/denys**
+**There will be cases when you will have broad allows/denies**
 
     Basically, You could have a broad allow but have specific actions or resources be Denied.
 
@@ -69,7 +69,7 @@ If you're on DENY then it will PREVENT the action from going through.
     
         There could be a second statement.
 
-        resource:awn:aws:s3::catgifs, Action:s3:*, Effect: Deny
+        resource:arn:aws:s3:::catgifs, Action:s3:*, Effect: Deny
         
         This would deny catgifs bucket and any objects in that bucket.
 
@@ -94,3 +94,32 @@ If they have no explicit access, they'll have no access.
 Using a managed policy would make things easier so you can just add people to that one instead of dealing with multiple policies at once.
 
 
+**EXAMPLE**
+
+    Sally - Developer
+    Miles - Accounts
+    Mike  - Production
+
+Option 1 : You could design a policy that grants access to the resources needed for that project. Then, assign the JSON for each account.
+
+*This was called Inline Policy.*
+    You are applying the policy to each user individually.
+
+    This would work in this case, but it's not best case due it being difficult to maintain.
+
+    Changing the access rights means changing it on all 3 inline policies.
+
+    Meaning it doesn't scale properly.
+
+Option 2 : You create an object policy. You then give it to any users you want it to apply to.
+
+*This is called a Managed Policy*
+
+    This is good because it's reusable, and Low Management Overhead.(JSON is easy to change because one change affects all users).
+
+    Scalable.
+
+    This should be the default operational rights.
+
+**When would you use an inline policy then?**
+    This is usually for special or exceptions. You can tune it to block certain actions for a certain user or allow a user to something.

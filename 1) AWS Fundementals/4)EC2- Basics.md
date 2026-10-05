@@ -2,7 +2,7 @@ Elastic Compute Cloud(EC2) Basics
 
     EC2 is AWS's implement of IAAS Infrastructure as a service.
 
-    It allows you to providion virtual machines known as instances with resources you select and an operating system of your choosing.
+    It allows you to provision virtual machines known as instances with resources you select and an operating system of your choosing.
 
     This overviews
         1. What an instance is
@@ -12,22 +12,22 @@ Elastic Compute Cloud(EC2) Basics
             instances.
 
 
-**Notes:
+**Notes:**
     - EC2 should be the default for any compute needed.
 
 **EC2 Key Facts & Features**
 ---
-    - IAAS - provides Virutal Machines => instances
+    - IAAS - provides Virtual Machines => instances
 
-    - EC2 is a a PRIVATE service by default
+    - EC2 is a PRIVATE service by default
         - uses VPC networking
 
     *Means it runs in the private AWS zone,
     usually configured to launch into a single VPC subnet.
 
-    * You set this when you launce the instance, you also have to configure an public access, if you want that. Because it is by default a private service.
+    * You set this when you launch the instance, you also have to configure an public access, if you want that. Because it is by default a private service.
 
-    * If you do want to support public access than the VPC supporting that EC2 must support that public access.
+    * If you do want to support public access then the VPC supporting that EC2 must support that public access.
 
     * With the default VPC this is usually configured for you..
     If you use a custom you'll need to configure that.
@@ -42,14 +42,14 @@ Elastic Compute Cloud(EC2) Basics
 
     - Basics - you can choose various sizes and capabilities.
 
-    These choices choices effect the resources the instance gets as well as extra capabilities, such as GPU, more advanced storage or networking or processes. You can change it after as well.
+    These choices affect the resources the instance gets as well as extra capabilities, such as GPU, more advanced storage or networking or processes. You can change it after as well.
 
     - Offers On-Demand Billing
         - per second.
         - Only pay what you consume.
         - charge for running the instance,charge for storage the instance uses, charge for commercial software it runs with.
         
-    - instances can use two popular types of storage thats on local host...
+    - instances can use two popular types of storage that's on local host...
         1. EC2 Host storage
             - The storage already on the ec2 machine
 
@@ -68,7 +68,7 @@ Elastic Compute Cloud(EC2) Basics
         2. Stopped
         3. Terminated
 
-    If you shutdown the instance it can be moved from running to stopped or vise versa when you start up the instance again.
+    If you shutdown the instance it can be moved from running to stopped or vice versa when you start up the instance again.
 
     Like switching off an appliance when you don't need it.
 
@@ -99,7 +99,7 @@ Elastic Compute Cloud(EC2) Basics
 
     Only way to have no charge for an ec2 instance is through 
     TERMINATION.
-    But be careful because it isn't reversable.
+    But be careful because it isn't reversible.
 
 **Amazon Machine Image(AMI)**
 ---
@@ -108,10 +108,10 @@ Elastic Compute Cloud(EC2) Basics
 
     an AMI contains
         1. Attached Permissions
-            -controls which accounts can or cant use the AMI
+            -controls which accounts can or can't use the AMI
             - Can be set public, everyone can use the AMI to launch
             instances
-            - default : public LInux or windows
+            - default : public Linux or windows
 
             - The owner of the AMI has implicit allow, allows them to add instances whenever.
 
@@ -128,8 +128,8 @@ Elastic Compute Cloud(EC2) Basics
             - determines which is the boot volume and which is the 
             data volume.
 
-        The way this works is the operating system is exepecting to 
-        recieve volumes presented to it as well as an ID, Device ID.
+        The way this works is the operating system is expecting to 
+        receive volumes presented to it as well as an ID, Device ID.
 
         The block Device mapping links to the device ID that the operating system expects.
 
@@ -141,7 +141,7 @@ Elastic Compute Cloud(EC2) Basics
     - You connect to windows systems using RDP(Remote desktop protocol) PORT 3389
 
     - You connect to a Linux system using SSH PORT 22
-        - YOu authenticate to that instance using a SSH key Pair.
+        - You authenticate to that instance using a SSH key Pair.
 
 
 

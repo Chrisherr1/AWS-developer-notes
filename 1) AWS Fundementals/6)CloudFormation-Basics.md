@@ -15,7 +15,7 @@ These templates can be used to update infrastructure.
     The components are..
         1. `List of resources`, at least one
                 It's the resources section of a CloudFormation template that tells CloudFormation what to do. IF resources are added to it then CloudFormation creates resources.
-                It updates and if a resource is removed and the template is reapplied the. the resources are removed.
+                It updates and if a resource is removed and the template is reapplied then the resources are removed.
                 Only Mandatory part of a template.
 **IN EXAM**
         2. `Description`
@@ -23,7 +23,7 @@ These templates can be used to update infrastructure.
 
         3. `AWSTemplateFormatVersion`
                 If you have both a description and a AWStemplateformatversion then the description MUST IMMEDIATELY follow it.
-                This template is NOT MANDITORY, but if you use them both you need to be aware of the conditons .So templateversion then description.
+                This template is NOT MANDATORY, but if you use them both you need to be aware of the conditions. So templateversion then description.
                 Its the way AWS can extend the standards over time.
 **IN THE EXAM**
         4. Metadata
@@ -36,7 +36,7 @@ These templates can be used to update infrastructure.
         
         6. Mappings
                 It allows you to create lookup tables..
-                Note to self: Didnt really say much.
+                Note to self: Didn't really say much.
 
         7. Conditions
                 this allows decision making in the template. So you can set stuff that will only occur if a condition is met.
@@ -45,13 +45,13 @@ These templates can be used to update infrastructure.
                     1. Create the condition
                     2. That condition is used within resources in the cloud formation template.(AKA needs to be stated that you're going to use it in the RESOURCES SECTION TOO if you're going to use it)
         8. Outputs
-                Once the template has been created it can present outputs based on what's being effected.
+                Once the template has been created it can present outputs based on what's being affected.
                 create,update,deleted.
 
 **Architecture of a Cloud formation**
         Cloud Formations are made from a template.
 
-        Template contains all of the above remmber.
+        Template contains all of the above remember.
 
         Resources within a cloud formation template are called 
         `Logical Resources`.
@@ -95,5 +95,5 @@ You can ALSO take a template edit it and then use it to update the same stack.
 Many uses include:
 
         1. You can use a template to deploy 1-infinite amount of sites at the same time.
-        2. Change Management- YOu can store templates in repos to have version control and have someone be able to look at it and edit it before actually applying the template.
+        2. Change Management- You can store templates in repos to have version control and have someone be able to look at it and edit it before actually applying the template.
         3. You can use a template to spin up one-off deployments.

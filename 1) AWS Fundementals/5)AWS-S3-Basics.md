@@ -3,7 +3,7 @@
     Simple Storage Service(S3)
 
     It provides a near infinitely scalable object storage platform-
-    Accessable from anywhere with a public internet connection.
+    Accessible from anywhere with a public internet connection.
 
     It tends to be default storage location for 
     `data ingestion` and output for many AWS services.
@@ -15,14 +15,14 @@
     It's a global storage platform
         - regional based / resilient
 
-        - Resilient because the data is replicated to the availabilities zones within that region.
+        - Resilient because the data is replicated to the availability zones within that region.
 
         - Regional because Its because the data is stored in a specific AWS region at
         rest.
 
         - Never Leaves that region unless YOU configure it to.
 
-    Its a PUBLIC service, so it can be reached anywhere you have an 
+    It's a PUBLIC service, so it can be reached anywhere you have an 
     internet connection.
 
     The service itself runs from the AWS public zone.
@@ -34,7 +34,7 @@
     - Scales to Unlimited storage.
     - Great VALUE
 
-YOu can access it via HTTP,SSH,or even gui.
+You can access it via HTTP,SSH,or even gui.
 
 **Think of it as your default starting point, when you need data storage**
 
@@ -42,7 +42,7 @@ S3 has 2 main things it delivers
     1. Objects
     2. Buckets
 
-Objects are the data that s3 stores, Photos,video, ect.
+Objects are the data that s3 stores, Photos,video, etc.
 Buckets are containers for objects.
 
 
@@ -57,7 +57,7 @@ Buckets are containers for objects.
         - Similar to a file name
         - Identifies the object in a bucket.
         - So if you know the object key you know which bucket it's in and its easy to identify the object.
-        - * Rememeber unless you configured it only the root user can access the files in s3.
+        - * Remember unless you configured it only the root user can access the files in s3.
 
     2. Value
         - This is the actual file
@@ -70,9 +70,9 @@ Buckets are containers for objects.
 
 **S3 Buckets**
 ---
-    Region locked, meaning that the data is stuck in the region you set it to and MUST adhear to laws of that area.
+    Region locked, meaning that the data is stuck in the region you set it to and MUST adhere to laws of that area.
 
-    It also means that if the entire region effected, your data will be effected.
+    It also means that if the entire region affected, your data will be affected.
 
 **A BUCKET name MUST BE unique, as they can be placed in any region and BE UNIQUELY named compared to OTHER AWS accounts Buckets.**
 
@@ -99,7 +99,7 @@ Buckets are containers for objects.
 
 **Folders are often referred to as prefixes in S3, because they are part of the object names**
 
-**Buckets are just a container that's stored in a region.And for S3 they're generally where alot of permissions and options are set.**
+**Buckets are just a container that's stored in a region. And for S3 they're generally where a lot of permissions and options are set.**
 
 **SO you go to the bucket to configure the way the S3 works.**
 
@@ -108,14 +108,14 @@ Buckets are containers for objects.
 ---
 
     - Bucket names are globally unique!
-        - if you try making a bucket and it gives you an error it's usually becuase somone else already has that bucket name
+        - if you try making a bucket and it gives you an error it's usually because someone else already has that bucket name
 
     - 3-63 characters all lowercase, start with lowercase letter or number, CANNOT BE IP FORMATTED 1.1.1.1
 
     - Buckets have a soft limit of 100 and HARD limit of 1000 per account.
         Use Prefixes to your advantage!, prefixes to sort data within 1 bucket!
 
-    - You may have unlimited objects in a bucket, 0bytes to 5TB
+    - You may have unlimited objects in a bucket, 0 bytes to 5TB
 
     - An Object consists of a key, value, Meta data
 
@@ -146,9 +146,9 @@ Buckets are containers for objects.
 
 One exam-relevant nuance: data transfer from S3 to CloudFront is free, so putting CloudFront in front of your bucket can actually lower your total bill versus serving straight from S3, since edge caching means fewer requests hit S3 at all.
 
-You'd need to implement a WAF+Cloud front to prevent abuse from flooding if necessary.
+You'd need to implement a WAF+CloudFront to prevent abuse from flooding if necessary.
 
-Usually cloudfront is enough though if no real traffic.
+Usually CloudFront is enough though if no real traffic.
 
 If someone tries hammering it it usually hammers the CDN instead.
 

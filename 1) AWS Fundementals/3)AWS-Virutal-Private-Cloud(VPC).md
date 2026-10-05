@@ -1,11 +1,11 @@
 Virtual Private Cloud
 ----------------------
 
-    VPC - Virtual Private Cloud is a virutal network inside AWS.
+    VPC - Virtual Private Cloud is a virtual network inside AWS.
 
     A VPC is within 1 account & 1 region.
 
-    Regionally resilient,they operate from multiple availability zones.
+    Regionally resilient, they operate from multiple availability zones.
 
     - By default, are private and isolated unless you decide otherwise.
 
@@ -19,7 +19,7 @@ Virtual Private Cloud
 
     Custom VPC is as many as you want.
         - you can configure them as you want as long as you stay under the rules and limits of VPCs.
-        - Require you to configure everything end-to-end in detail,100% private by default.
+        - Require you to configure everything end-to-end in detail, 100% private by default.
         
 *In real deployments you will be using a VPC*
 
@@ -30,7 +30,7 @@ Virtual Private Cloud
 
 **VPC Basics**
 --------------
-    A region can have multiple custom VPCs within it and unless you confgure it otherwise there is no way a VPC can communicate outside their specific private network.
+    A region can have multiple custom VPCs within it and unless you configure it otherwise there is no way a VPC can communicate outside their specific private network.
 
 *This example is for default VPC*
 
@@ -51,11 +51,11 @@ Virtual Private Cloud
 
 *Custom VPCs can have multiple CIDR ranges*
 
-    But the custom always gets 1 CIDR range, and its ALWAYS the same.
+    But the custom always gets 1 CIDR range, and it's ALWAYS the same.
 
     172.31.0.0/16
 
-    This is strength because its always configured in the same predicatable way.
+    This is strength because it's always configured in the same predictable way.
 
     You'll know that each region will have multiple availability zones, and each is an independent pool of infrastructure.
 
@@ -66,7 +66,7 @@ Virtual Private Cloud
     This is set on creation and can never be changed.
 
     With the default VPC it's always configured in the same way,
-    its preconfigured to have one subnet per availability zone in that region.
+    it's preconfigured to have one subnet per availability zone in that region.
 
     Each will use the IPs available to them by the CIDR 172.31.0.0/16
 

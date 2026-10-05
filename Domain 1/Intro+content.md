@@ -4,16 +4,16 @@ Domain 1: 32% of questions (20)
         - Event driven design helps decouple.
         Know loosely coupled and tightly coupled services are
 
-       - Event driven communicate through networks, unlike monolithithics.
-       this is refering to microservices.
+       - Event driven communicate through networks, unlike monolithics.
+       this is referring to microservices.
 
-        - Instead of retrying, you could use expontial back off+ jitter.
+        - Instead of retrying, you could use exponential back off+ jitter.
 
         Message failures - Lambda to send invocations to other services.
 
-        Code and build Resilence to handle failures.
+        Code and build Resilience to handle failures.
 
-        - Use AWS services for difference design patterns,
+        - Use AWS services for different design patterns,
             - Event-driven
             - Orchestration
             - Fanout

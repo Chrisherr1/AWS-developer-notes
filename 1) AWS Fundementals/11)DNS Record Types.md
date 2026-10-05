@@ -8,15 +8,15 @@
 
     2. A & AAAA records
         Map host names to IP address.
-        A - Ipv4
-        AAAA - IPV6
+        A - IPv4
+        AAAA - IPv6
     
     3. CNAME
         - Lets you create DNS shortcuts.
 
     4. MX record
-        - USed 
+        - Used 
 
     TTL - Time to Live
-        - Recommended to Lower the TTL value before the work. Days or Weeks in advanced.
+        - Recommended to Lower the TTL value before the work. Days or Weeks in advance.
         

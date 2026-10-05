@@ -5,18 +5,18 @@
 **High Availability**
 ---
 
-    - Aims to entire a agreed level of operational preformeance, usually uptime, for a higher than normal period.
+    - Aims to ensure an agreed level of operational performance, usually uptime, for a higher than normal period.
 
-    -HA is NOT aiming to stop FAILURE, and it definetly doesn't mean customers WONT experience outages.
+    -HA is NOT aiming to stop FAILURE, and it definitely doesn't mean customers WON'T experience outages.
 
     A HA is one designed to be online and providing services as often as possible. It designed so that the components can be replaced as quickly as possible.
 
     Often using automation to bring systems back into service.
 
     HA is NOT ABOUT user experience.
-        -If a component fails and it gets replaced and disrupts service for a few secs thats okay, its still HA.
+        -If a component fails and it gets replaced and disrupts service for a few secs that's okay, it's still HA.
 
-    It's only about maximizing online time, thats it.
+    It's only about maximizing online time, that's it.
 
     Often represented by 99.9%,99.99%,99.9999%
 
@@ -32,7 +32,7 @@ Key idea : It's only really about minimizing outages, not user experience.
     - means if something fails, it should be able to continue operating properly even while those faults are present and are 
     being fixed.
 
-    - Should be able to work, with faults without effecting customers.
+    - Should be able to work, with faults without affecting customers.
 
     - MORE EXPENSIVE,MORE COMPLEX to implement
 
